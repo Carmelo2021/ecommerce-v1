@@ -1,0 +1,32 @@
+<%- include ('../parciales/encabezado'); %>
+<style>
+    tr,td{
+        border:2px solid red;
+    }
+</style>
+<body>
+<div>
+    Esto es un banner que uds pondran
+</div>
+<nav>barrita vacia</nav>
+<h3><%=listaDepartamentos.length %></h3>
+<table>
+    <thead>
+        <th>Nombre</th>
+        <th>Municipios</th>
+    </thead>
+    <tbody>
+<% listaDepartamentos.forEach(departamento => { %>
+        <tr>
+            <td><%=departamento.name%></td>
+            <td><%=departamento.municipalities%></td>
+        </tr>
+
+<%})%>
+</tbody>
+</table>
+
+
+
+
+</body>
