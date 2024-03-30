@@ -2,10 +2,11 @@
   "name": "node3",
   "version": "1.0.0",
   "description": "primer proyecto con ejs",
-  "main": "launcher.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon launcher"
+    "dev": "nodemon index",
+    "start": "node index"
   },
   "keywords": [
     "sena",

@@ -1,0 +1,49 @@
+<%- include ('../parciales/encabezado'); %>
+<style>
+    th,tr,td{
+        border:2px solid red;
+        height: 20px;
+    }
+    table{
+        margin-left: 25px;
+    }
+</style>
+<body>
+<div>
+    Esto es un banner que uds pondran
+</div>
+<nav>barrita vacia</nav>
+
+<table>
+    <thead>
+        <th>Referencia</th>
+        <th>Productos</th>
+        <th>Precio</th>
+        <th>Descripcion</th>
+        <th>Categoria</th>
+        <th>Imagenes</th>
+        <th>acciones</th>
+    </thead>
+    <tbody>
+<% listadoProductos.forEach(producto => { %>
+        <tr>
+            <td><%= producto.referencia %></td>
+            <td><%= producto.nombre %></td>
+            <td><%= producto.precio %></td>
+            <td><%= producto.descripcion %></td>
+            <td><%= producto.categoria %></td>
+            <td><%= producto.imagenes %></td>
+            <td>
+                <button data-bs-toggle="modal" data-bs-target="#editModal" onclick="fillData(`<%= librarian._id %>`, `<%= librarian.fullname %>`, `<%= librarian.email %>`, `<%= librarian.phone %>`)"><i class="bi bi-pencil-square"></i></button>
+                <button class="btn btn-outline-danger" onclick="deleteRecord(`deleteuser/<%= librarian._id %>`)"><i class="bi bi-trash"></i></button>
+           
+            </td>
+        </tr>
+
+<%})%>
+</tbody>
+</table>
+
+<%- include ('../parciales/footer'); %>
+
+</body>
