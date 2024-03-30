@@ -22,6 +22,7 @@ app.set('view engine','ejs');
 app.set('views', path.join(__dirname,'./frontend/views')) //comentarios
 const router = require('./backend/routes/router');
 app.use('/api/v1', router)
+require('dotenv').config()
 
 app.get('/productos', async (req,res)=>{
     console.log('entra')
@@ -97,3 +98,62 @@ app.delete('/productos/:id', async (req,res)=>{
 });
 
 
+
+
+
+/**
+ * 
+ * app.delete('/peliculas/:movieId',(req,res)=>{
+
+    let movieId = req.params.movieId;
+
+    Movie.findByIdAndRemove(movieId, (err, todo) => {
+        if (err) return res.status(500).send(err);
+        const response = {
+            message: "Pelicula eliminada con éxito",
+            id: res.movieId
+        };
+        return res.status(200).send(response);
+
+    })
+})
+ */
+
+/**
+ * 
+ * 
+ * https://ljcl79.medium.com/construyendo-una-api-con-node-express-mongodb-f5c9ec86b908
+ * 
+ */
+
+//        var condicion = nombre ? { nombre: { $regex: new RegExp(nombre), $options: "i" } } : {};
+
+/*
+app.get('/listarProductos', async (req,res)=>{
+    let listadoProductos = await modeloProducto.find();
+    if(listadoProductos) 
+        res.status(200).json(listadoProductos);
+    else 
+        res.status(404).json({error: "No se encontraron productos"});
+
+    /*
+     res.render('paginas/listarProductos',
+        {
+            "listadoProductos":listadoProductos
+        }
+        ); 
+});
+
+app.get('/pruebainsertar',(req,res)=>{
+    res.render('paginas/formularioProducto')
+});
+
+app.get('/pruebaeliminar',(req,res)=>{
+    res.render('paginas/eliminarProducto')
+});
+
+app.get('/pruebaeditar',(req,res)=>{
+        res.render('paginas/editarProducto')
+   });
+
+*/
